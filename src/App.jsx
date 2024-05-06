@@ -1,13 +1,15 @@
+import { useReducer } from 'react'
 import './App.css'
-import { Footer, Navbar } from './components/shop/partials'
+import { LayoutContext } from './components/shop/layout/Layout'
+import PageRoutes from './components/shop/PageRoutes'
+import { layoutReducer, layoutState } from './components/shop/layout/layoutContext'
 
 function App() {
-
+  const [data, dispatch] = useReducer(layoutReducer, layoutState)
   return (
-    <>
-      <Navbar />
-      <Footer />
-    </>
+    <LayoutContext.Provider value={{data, dispatch}}>
+      <PageRoutes/>
+    </LayoutContext.Provider>
   )
 }
 
