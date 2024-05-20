@@ -5,7 +5,7 @@ const Signup = () => {
     const [data, setData] = useState({
         name: "",
         email: "",
-        pasword: "",
+        password: "",
         cPassword: "",
         error: false,
         loading: false,
@@ -18,12 +18,12 @@ const Signup = () => {
 
     const formSubmit = async () => {
         setData({ ...data, loading: true })
-        if (data.cPassword !== data.pasword) {
+        if (data.cPassword !== data.password) {
             return setData({
                 ...data,
                 error: {
                     cPassword: "Password doesn't match",
-                    pasword: "Password doesn't match"
+                    password: "Password doesn't match"
                 }
             })
         }
@@ -41,7 +41,7 @@ const Signup = () => {
                     ...data,
                     loading: false,
                     error: responseData.error,
-                    pasword: "",
+                    password: "",
                     cPassword: ""
                 })
             } else if (responseData.success) {

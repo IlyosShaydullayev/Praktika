@@ -26,6 +26,6 @@ export const isAuthenticate = () => {
     localStorage.getItem("jwt") ? JSON.parse(localStorage.getItem("jwt")) : false
 }
 
-export const isAdmin = () => {
+export const isAdmin = () => 
     localStorage.getItem("jwt") ? JSON.parse(localStorage.getItem("jwt")).user.role === 1 : false
-}
+

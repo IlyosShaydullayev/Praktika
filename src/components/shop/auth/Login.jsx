@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext, useState } from "react"
 import { LayoutContext } from "../layout/Layout"
 import { loginReq } from "./FetchApi"
