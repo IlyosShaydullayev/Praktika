@@ -2,12 +2,17 @@
 import { createContext, useReducer } from "react"
 import { dashboardReducer, dashboardState } from "./DashboardCongtext"
 import AdminLayout from "../layout/AdminLayout"
+import DashboardCard from "./DashboardCard"
+import Customize from "./Customize"
 
 export const DashboardContext = createContext()
 
 const DashboardComponent = () => {
     return (
-        <></>
+        <>
+            <DashboardCard />
+            <Customize/>
+        </>
     )
 }
 

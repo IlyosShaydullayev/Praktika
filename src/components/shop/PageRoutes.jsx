@@ -9,9 +9,9 @@ const PageRoutes = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/admin/dashboard" element={
-                    <AdminProtectedRoute>
                         <DashboardAdmin />
-                    </AdminProtectedRoute>
+                    // <AdminProtectedRoute>
+                    // </AdminProtectedRoute>
                 } />
             </Routes>
         </BrowserRouter>
