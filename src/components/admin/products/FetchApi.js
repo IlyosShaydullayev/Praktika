@@ -28,3 +28,12 @@ export const productByCategory = async (catId) => {
         console.log(error);
     }
 }
+
+export const deleteProduct = async (pId) => {
+    try {
+        let res = await axios.post(`${apiURL}/api/product/delete-product`, { pId })
+        return res.data
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -4,6 +4,7 @@ import { dashboardReducer, dashboardState } from "./DashboardCongtext"
 import AdminLayout from "../layout/AdminLayout"
 import DashboardCard from "./DashboardCard"
 import Customize from "./Customize"
+import TodaySell from "./TodaySell"
 
 export const DashboardContext = createContext()
 
@@ -12,6 +13,7 @@ const DashboardComponent = () => {
         <>
             <DashboardCard />
             <Customize/>
+            <TodaySell/>
         </>
     )
 }

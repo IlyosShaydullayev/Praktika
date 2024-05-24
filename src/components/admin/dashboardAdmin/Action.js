@@ -1,4 +1,11 @@
-import { getSliderImages, postUploadImage } from "./FetchApi";
+import { DashboardData, getSliderImages, postUploadImage } from "./FetchApi";
+
+export const GetAllData = async(dispatch) => {
+    let responseData = await DashboardData()
+    if(responseData) {
+        dispatch({type: "totalData", payload: responseData})
+    }
+}
 
 export const sliderImages = async (dispatch) => {
     try {

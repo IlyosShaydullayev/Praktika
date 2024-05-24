@@ -1,11 +1,13 @@
 import { useContext, useEffect } from "react"
 import { DashboardContext } from "./DashboardAdmin"
+import { GetAllData } from "./Action"
 
 const DashboardCard = () => {
     const { data, dispatch } = useContext(DashboardContext)
 
     useEffect(() => {
-
+        GetAllData(dispatch)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <>
@@ -133,7 +135,7 @@ const DashboardCard = () => {
                         {data ? data.totalData.Categories : 0}
                     </div>
                     <div className="text-lg font-medium">Categories</div>
-                   
+
                 </div>
             </div>
         </>
