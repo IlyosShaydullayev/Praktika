@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { ProductContext } from "./Products"
+import AddProductModal from "./AddProductModal"
 
 const ProductMenu = () => {
     const { dispatch } = useContext(ProductContext)
@@ -26,6 +27,7 @@ const ProductMenu = () => {
                         Add Product
                     </span>
                 </div>
+                <AddProductModal />
             </div>
         </>
     )

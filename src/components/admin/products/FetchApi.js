@@ -37,3 +37,24 @@ export const deleteProduct = async (pId) => {
         console.log(error);
     }
 }
+
+export const createProduct = async ({ pName, pDescription, pImage, pStatus, pCategory, pQuantity, pPrice, pOffer }) => {
+    let formData = new FormData()
+    for (const file of pImage) {
+        formData.append("pImage", file)
+    }
+
+    formData.append("pName", pName)
+    formData.append("pDescription", pDescription)
+    formData.append("pStatus", pStatus)
+    formData.append("pCategory", pCategory)
+    formData.append("pQuantity", pQuantity)
+    formData.append("pPrice", pPrice)
+    formData.append("pOffer", pOffer)
+
+    try {
+        let res = await axios.post(`${apiURL}/api/product/add-product`, formData)
+    } catch (error) {
+        console.log(error);
+    }
+}

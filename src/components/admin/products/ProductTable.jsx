@@ -118,7 +118,13 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
                     {product.pDescription.substring(1, 15)}...
                 </td>
                 <td className="p-2 text-center">
-                    <img src={product?.pImage[0].url} alt="pic" className="w-12 h-12 object-cover object-center" />
+                    {product.pImage && product.pImage.length > 0 && (
+                        <img
+                            src={product.pImage[0].url}
+                            alt="pic"
+                            className="w-12 h-12 object-center"
+                        />
+                    )}
                 </td>
                 <td className="p-2 text-center">
                     {product.pStatus === "Active" ? (

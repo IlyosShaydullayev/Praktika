@@ -6,7 +6,7 @@ const ProductCategory = () => {
     const { data, dispatch } = useContext(HomeContext)
     return (
         <>
-            <div className="flex justify-between font-medium">
+            <div className="flex justify-between font-medium ">
                 <div
                     onClick={() => dispatch({ type: "categoryListDropdown", payload: !data.categoryListDropdown })}
                     className={`flex items-center space-x-1 cursor-pointer ${data.categoryListDropdown ? "text-yellow-700" : ""}`}
