@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { CategoryContext } from "./Category"
+import AddCategoryModal from "./AddCategoryModal"
 
 const CategoryMenu = () => {
     const { dispatch } = useContext(CategoryContext)
@@ -7,7 +8,9 @@ const CategoryMenu = () => {
         <>
             <div className="col-span-1 flex items-center">
                 <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center w-full">
-                    <div className="cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase" onClick={() => dispatch({ type: "addCategoryModal", payload: true })}>
+                    <div
+                        onClick={(e) => dispatch({type: "addCategoryModal", payload: true})}
+                        className="bg-[#303031] cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase" onClick={() => dispatch({ type: "addCategoryModal", payload: true })}>
                         <svg
                             className="w-6 h-6 text-gray-100 mr-2"
                             fill="currentColor"
@@ -23,6 +26,7 @@ const CategoryMenu = () => {
                         Add Category
                     </div>
                 </div>
+                <AddCategoryModal />
             </div>
         </>
     )

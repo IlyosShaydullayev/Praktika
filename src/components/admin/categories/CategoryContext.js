@@ -12,6 +12,16 @@ export const categoryState = {
 
 export const categoryReducer = (state, action) => {
     switch (action.type) {
+        case "fetchCategoryAndState":
+            return {
+                ...state,
+                categories: action.payload
+            }
+        case "addCategoryModal":
+            return {
+                ...state,
+                addCategoryModal: action.payload
+            }
         case "loading":
             return {
                 ...state,

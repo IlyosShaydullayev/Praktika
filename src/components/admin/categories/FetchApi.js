@@ -14,10 +14,25 @@ const Headers = () => {
 }
 
 
-export const getAllCategory = async() => {
+export const getAllCategory = async () => {
     try {
         let res = await axios.get(`${apiURL}/api/category/all-category`, Headers())
         console.log(res.data);
+        return res.data
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const createCategory = async ({ cName, cImage, cDescription, cStatus }) => {
+    let formData = new FormData()
+    formData.append("cImage", cImage)
+    formData.append("cName", cName)
+    formData.append("cDescription", cDescription)
+    formData.append("cStatus", cStatus)
+
+    try {
+        let res = await axios.post(`${apiURL}/api/category/add-category`, formData, Headers())
         return res.data
     } catch (error) {
         console.log(error);
